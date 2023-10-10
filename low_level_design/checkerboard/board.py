@@ -11,11 +11,11 @@ class Board(ABC):
         self.cells: list[list[Cell]]
 
     @abstractmethod
-    def _create_checkerboard_cells(self):
+    def _create_checkerboard_cells(self) -> list[list[Cell]]:
         pass
 
     @abstractmethod
-    def initialize_board(self):
+    def initialize_board(self) -> None:
         pass
 
     @abstractmethod
@@ -28,7 +28,7 @@ class ChessBoard(Board):
         super().__init__(8)
         self.cells = self._create_checkerboard_cells()
 
-    def _create_checkerboard_cells(self):
+    def _create_checkerboard_cells(self) -> list[list[Cell]]:
         return [[Cell(Color.WHITE if (i + j) % 2 == 0 else Color.BLACK) for i in range(self.size)] for j in range(self.size)]
 
     def initialize_board(self):
@@ -44,4 +44,3 @@ class ChessBoard(Board):
         if self._is_valid_move(start, end):
             self.cells[end.x][end.y].piece = self.cells[start.x][start.y].piece
             self.cells[start.x][start.y].piece = None
-

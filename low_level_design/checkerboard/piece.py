@@ -9,60 +9,61 @@ class Piece(ABC):
     def __init__(self, color: Color):
         self.color = color
 
+    @staticmethod
     @abstractmethod
-    def is_valid_move(self, start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         pass
 
 
-class King(ABC):
+class King(Piece):
     def __init__(self, color: Color):
         super().__init__(color)
 
     @staticmethod
-    def is_valid_move(start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         return True if end.is_valid_position(board) and start.direct_distance(end) == 1 else False
 
 
-class Queen(ABC):
+class Queen(Piece):
     def __init__(self, color: Color):
         super().__init__(color)
 
     @staticmethod
-    def is_valid_move(start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         return False
 
 
-class Rook(ABC):
+class Rook(Piece):
     def __init__(self, color: Color):
         super().__init__(color)
 
     @staticmethod
-    def is_valid_move(start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         return False
 
 
-class Knight(ABC):
+class Knight(Piece):
     def __init__(self, color: Color):
         super().__init__(color)
 
     @staticmethod
-    def is_valid_move(start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         return False
 
 
-class Bishop(ABC):
+class Bishop(Piece):
     def __init__(self, color: Color):
         super().__init__(color)
 
     @staticmethod
-    def is_valid_move(start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         return False
 
 
-class Pawn(ABC):
+class Pawn(Piece):
     def __init__(self, color: Color):
         super().__init__(color)
 
     @staticmethod
-    def is_valid_move(start: Position, end: Position, board: Board):
+    def is_valid_move(start: Position, end: Position, board: Board) -> bool:
         return False
