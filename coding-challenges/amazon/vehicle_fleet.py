@@ -69,10 +69,8 @@ class Solution:
             if wheels_left == 0:
                 return 1
             total = 0
-            print("a", wheels_left, last_vehicle_idx)
             for idx in range(last_vehicle_idx, len(vehicles)):
                 total += count_combinations(wheels_left - vehicles[idx], idx)
-            print("b", wheels_left, total)
             return total
 
         for count in wheels:
