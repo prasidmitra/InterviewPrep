@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from checkerboard.board import Board
+from low_level_design.checkerboard.board import Board
 
 
 @dataclass

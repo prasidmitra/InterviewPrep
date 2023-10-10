@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
-from checkerboard.board import Board
-from checkerboard.color import Color
-from checkerboard.position import Position
+from low_level_design.checkerboard.board import Board
+from low_level_design.checkerboard.color import Color
+from low_level_design.checkerboard.position import Position
 
 
 class Piece(ABC):

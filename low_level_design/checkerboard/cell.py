@@ -1,5 +1,5 @@
-from checkerboard.piece import Piece
-from checkerboard.color import Color
+from low_level_design.checkerboard.piece import Piece
+from low_level_design.checkerboard.color import Color
 
 
 class Cell:
